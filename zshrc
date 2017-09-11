@@ -33,7 +33,7 @@ _load_settings() {
 
     if [ -d "$_dir/post" ]; then
       for config in "$_dir"/post/**/*(N-.); do
-        if [ ${config:e} = "zwc" ] ; then continue ; fi
+        # if [ ${config:e} = "zwc" ] ; then continue ; fi
         . $config
       done
     fi

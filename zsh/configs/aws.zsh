@@ -1,4 +1,4 @@
-#source /usr/local/share/zsh/site-functions/_aws
+# source /usr/local/share/zsh/site-functions/_aws
 
-#eb cli
+# eb cli
 export PATH=~/.local/bin:$PATH
