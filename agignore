@@ -5,3 +5,8 @@ tags
 /node_modules/
 /tmp
 /vendor
+/target
+/_build
+/elm-stuff
+.DS_Store
+/deps
