@@ -1,0 +1,102 @@
+#grep
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+#ls
+# alias ls='ls --color'
+alias l='ls -alhF'
+
+#cd
+alias ..='cd ..'
+
+#ruby
+alias be='bundle exec'
+
+#elixir
+alias iexm='iex -S mix'
+alias iexs='iex -S mix phoenix.server'
+alias iext='iex -S mix test'
+alias mixs='mix phoenix.server'
+
+#docker
+alias d='docker'
+alias dsa='docker stop $(docker ps -a -q)'
+alias dcr='docker-compose run'
+alias dcb='docker-compose build'
+alias dcu='docker-compose up'
+
+#terraform
+alias tf='terraform'
+
+#ag
+alias ag='ag --path-to-ignore=~/.agignore'
+
+#tree
+alias tree='tree -I "$(cat ~/.treeignore)"'
+alias t='tree -a --dirsfirst'
+alias t1='tree -a -L 1 --dirsfirst'
+alias t2='tree -a -L 2 --dirsfirst'
+alias t3='tree -a -L 3 --dirsfirst'
+alias t4='tree -a -L 4 --dirsfirst'
+alias t5='tree -a -L 5 --dirsfirst'
+alias td='tree -a -d --dirsfirst'
+alias td1='tree -a -d -L 1 --dirsfirst'
+alias td2='tree -a -d -L 2 --dirsfirst'
+alias td3='tree -a -d -L 3 --dirsfirst'
+alias td4='tree -a -d -L 4 --dirsfirst'
+alias td5='tree -a -d -L 5 --dirsfirst'
+
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+  alias copy='xclip -sel clip'
+  alias paste='xclip -o'
+  alias pbcopy='xclip -sel clip'
+  alias pbpaste='xclip -o'
+  alias fiddler='nohup mono ~/src/fiddler/Fiddler.exe > /dev/null 2>&1 &'
+else
+  alias copy='pbcopy'
+  alias paste='pbpaste'
+fi
+
+# Create a new directory and enter it
+mkd() {
+  mkdir -p "$@" && cd "$@"
+}
+
+tre() {
+  tree -aC -I '.git' --dirsfirst "$@" | less -FRNX
+}
+
+#color man pages
+man() {
+  env \
+    LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+    LESS_TERMCAP_md=$(printf "\e[1;31m") \
+    LESS_TERMCAP_me=$(printf "\e[0m") \
+    LESS_TERMCAP_se=$(printf "\e[0m") \
+    LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+    LESS_TERMCAP_ue=$(printf "\e[0m") \
+    LESS_TERMCAP_us=$(printf "\e[1;32m") \
+    man "$@"
+}
+
+serve() {
+  python2 -m SimpleHTTPServer "$@"
+}
+
+source <(kubectl completion zsh)
+
+alias kc='kubectl'
+alias kcc='kc config'
+alias kcccc='kcc current-context'
+alias kccgc='kcc get-clusters'
+alias kccuc='kcc use-context'
+alias kcd='kc describe'
+alias kcg='kc get'
+alias gc='gcloud'
+
+tmux_unzoom() {
+  if $(tmux list-panes -F '#F' | grep -q Z); then
+    tmux resize-pane -Z
+  fi
+}

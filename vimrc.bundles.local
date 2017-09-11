@@ -1,0 +1,73 @@
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'morhetz/gruvbox'
+
+Plug 'sjl/gundo.vim'
+
+"Vim + Tmux
+Plug 'jgdavey/tslime.vim'
+
+Plug 'tmhedberg/matchit'
+Plug 'kana/vim-textobj-user'
+Plug 'nelstrom/vim-textobj-rubyblock'
+Plug 'airblade/vim-gitgutter'
+Plug 'tomtom/tcomment_vim'
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/vim-peekaboo'
+Plug 'kshenoy/vim-signature'
+Plug 'bradurani/vim-powerclose', { 'branch': 'master' }
+Plug 'schickling/vim-bufonly'
+Plug 'chaoren/vim-wordmotion'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'AndrewRadev/switch.vim'
+Plug 'jiangmiao/auto-pairs'
+Plug 'mcasper/vim-infer-debugger'
+Plug 'Valloric/YouCompleteMe'
+Plug 'sbdchd/neoformat'
+
+Plug 'tmux-plugins/vim-tmux-focus-events'
+
+"JavaScript
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'leshill/vim-json'
+Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'mustache/vim-mustache-handlebars'
+
+"css
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'hail2u/vim-css3-syntax'
+
+Plug 'honza/dockerfile.vim'
+Plug 'ElmCast/elm-vim'
+Plug 'exu/pgsql.vim'
+
+"elixir
+Plug 'elixir-lang/vim-elixir'
+Plug 'thinca/vim-ref'
+" Plug 'awetzel/elixir.nvim', { 'do': 'yes \| ./install.sh' }
+
+"Ruby
+Plug 'ngmy/vim-rubocop'
+Plug 'ecomba/vim-ruby-refactoring'
+
+"Rust
+Plug 'rust-lang/rust.vim'
+Plug 'timonv/vim-cargo'
+Plug 'nonius/cargo.vim'
+
+"Scala
+Plug 'derekwyatt/vim-scala'
+Plug 'ensime/ensime-vim'
+
+"Terraform
+Plug 'hashivim/vim-terraform'
+
+"Puppet
+Plug 'rodjek/vim-puppet'
+
+"neovim
+" Plug 'kassio/neoterm'
