@@ -1,0 +1,26 @@
+#!/bin/bash
+set -eux
+
+brew update
+brew upgrade --all
+brew reinstall --HEAD fzf
+
+npm update -g
+gem update --system
+
+pushd ~/src/bradrc
+  bundle update
+popd
+
+rcup
+
+pushd ~/.rbenv/plugins
+  for plugin in *; do
+    pushd "$plugin"
+      git pull
+    popd
+  done
+popd
+
+cowsay "don't forget to update ~/src/dotfiles"
+
