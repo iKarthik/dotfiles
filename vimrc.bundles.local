@@ -35,7 +35,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'leshill/vim-json'
 Plug 'othree/javascript-libraries-syntax.vim'
-Plug 'mustache/vim-mustache-handlebars'
+" Plug 'mustache/vim-mustache-handlebars'
 
 "css
 Plug 'cakebaker/scss-syntax.vim'
@@ -55,13 +55,13 @@ Plug 'ngmy/vim-rubocop'
 Plug 'ecomba/vim-ruby-refactoring'
 
 "Rust
-Plug 'rust-lang/rust.vim'
-Plug 'timonv/vim-cargo'
-Plug 'nonius/cargo.vim'
+" Plug 'rust-lang/rust.vim'
+" Plug 'timonv/vim-cargo'
+" Plug 'nonius/cargo.vim'
 
 "Scala
 Plug 'derekwyatt/vim-scala'
-Plug 'ensime/ensime-vim'
+" Plug 'ensime/ensime-vim'
 
 "Terraform
 Plug 'hashivim/vim-terraform'
