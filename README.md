@@ -1,7 +1,23 @@
+# Git Config
+
+If you're not me, edit ~/.gitconfig.local/ and replace my git name and email with yours
+
+# MacOS Config
+
+To change MacOS settings
+
+cd ~
+./.osx
+
+# Extras
+
+Powerline Fonts (set iTerm to use Inconsolata-g)
+tmux-mem-cpu-load
+tmux-battery
+rbenv-ctags
+
 thoughtbot dotfiles
 ===================
-
-![prompt](http://images.thoughtbot.com/thoughtbot-dotfiles-prompt.png)
 
 Requirements
 ------------
@@ -263,20 +279,3 @@ We are [available for hire][hire].
 [hire]: https://thoughtbot.com/hire-us?utm_source=github
 
 
-Git Config
-
-If you're not me, edit ~/.gitconfig.local/ and replace my git name and email with yours
-
-MacOS Config
-
-To change MacOS settings
-
-cd ~
-./.osx
-
-Extras
-
-Powerline Fonts (set iTerm to use Inconsolata-g)
-tmux-mem-cpu-load
-tmux-battery
-rbenv-ctags
