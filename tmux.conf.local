@@ -5,12 +5,12 @@ bind-key -T copy-mode-vi 'r' send -X rectangle-toggle
 bind-key -T copy-mode-vi 'y' send -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy" #MacOS
 
 # Status bar colors
-set -g status-bg '#222200'
-set -g status-fg '#5fafff'
+# set -g status-bg '#222200'
+# set -g status-fg '#5fafff'
 
 # Inverse colors for selected window
-set-window-option -g window-status-current-bg '#5fafff'
-set-window-option -g window-status-current-fg '#222200'
+# set-window-option -g window-status-current-bg '#5fafff'
+# set-window-option -g window-status-current-fg '#222200'
 
 # Easy reload tmux config
 unbind r
@@ -42,12 +42,12 @@ bind -n S-Right next-window
 
 # Status Bar
 set -g status-interval 2
-set -g status-left '#{battery_icon} #[fg=green]#{battery_percentage} #{battery_remain} #[fg=blue]#S #[fg=#5fafff] %Y-%m-%dT%H:%M:%S%z #[fg=green] #[default]'
-set -g status-left-length 120
-set -g status-justify 'centre'
+# set -g status-left '  #[fg=green]  #[default]'
+# set -g status-left-length 120
+# set -g status-justify 'centre'
 
-set -g status-right "#[fg=green,bg=black]#(date -u +%%Y-%%m-%%dT%%H:%%M:%%S%%z) #(tmux-mem-cpu-load -q --colors --interval 1 --graph-lines 0 --averages-count 1 --mem-mode 1)"
-set -g status-right-length 120
+set -g status-right "#[fg=white]%m-%dT%H:%M:%S%z #[fg=black]#(date -u +%%m-%%dT%%H:%%M:%%S) #{battery_icon} #[fg=green]#{battery_percentage} #{battery_remain}#(tmux-mem-cpu-load -q --colors --interval 1 --graph-lines 0 --averages-count 1 --mem-mode 1)"
+set -g status-right-length 220
 
 set -g focus-events on
 run-shell ~/src/tmux-battery/battery.tmux
