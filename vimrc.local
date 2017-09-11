@@ -37,18 +37,19 @@ let g:airline#extensions#default#section_truncate_width = {
       \ 'y': 180,
       \ 'z': 170,
       \ }
-"
+let g:airline#extensions#ale#enabled = 1
+
 "gitgutter
 set signcolumn=yes
 
-"syntastic
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
-let g:syntastic_javascript_checkers = ['eslint']
-"syntastic + vim-elm
-let g:elm_syntastic_show_warnings = 1
+" "syntastic
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 0
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 1
+" let g:syntastic_javascript_checkers = ['eslint']
+" "syntastic + vim-elm
+" let g:elm_syntastic_show_warnings = 1
 
 "vim-elm
 let g:elm_format_autosave = 1
@@ -110,7 +111,7 @@ aug CursorInsert
 aug END
 hi MatchParen ctermbg=blue guibg=lightblue
 "make error window automatically pop up for elm files
-autocmd FileType elm let g:syntastic_auto_loc_list = 1
+" autocmd FileType elm let g:syntastic_auto_loc_list = 1
 
 au BufRead,BufNewFile *.es6 setf javascript
 au BufRead,BufNewFile .eslint setf json
@@ -150,7 +151,7 @@ autocmd FileType scss vnoremap <buffer> <c-f> :call RangeCSSBeautify()<cr>
 "vim-better-whitespace
 autocmd FileType ruby,elixir,javascript,scala autocmd BufWritePre <buffer> StripWhitespace
 
-let g:syntastic_csslint_args="--ignore=outline-none"
+" let g:syntastic_csslint_args="--ignore=outline-none"
 let g:ycm_semantic_triggers = {
       \   'css': [ 're!^\s{2}', 're!:\s+' ],
       \   'scss': [ 're!^\s{2}', 're!:\s+' ]
@@ -304,15 +305,15 @@ inoremap <C-x> <C-o>x
 map <C-\> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 "## Function keys ##
-function! ToggleErrors()
-  if empty(filter(tabpagebuflist(), 'getbufvar(v:val, "&buftype") is# "quickfix"'))
-    " No location/quickfix list shown, open syntastic error location panel
-    Errors
-  else
-    lclose
-  endif
-endfunction
-nnoremap <f7> :call ToggleErrors()<CR>
+" function! ToggleErrors()
+"   if empty(filter(tabpagebuflist(), 'getbufvar(v:val, "&buftype") is# "quickfix"'))
+"     " No location/quickfix list shown, open syntastic error location panel
+"     Errors
+"   else
+"     lclose
+"   endif
+" endfunction
+" nnoremap <f7> :call ToggleErrors()<CR>
 
 au FileType elm nnoremap <F9> :ElmErrorDetail<CR>
 
