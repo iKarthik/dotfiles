@@ -12,7 +12,6 @@ To change MacOS settings
 
 # Extras
 
-## Extras
  - [Powerline Fonts](https://github.com/powerline/fonts) (set iTerm to use Inconsolata-g)
  - [tmux-mem-cpu-load](https://github.com/thewtex/tmux-mem-cpu-load)
  - [tmux-battery](https://github.com/tmux-plugins/tmux-battery)
