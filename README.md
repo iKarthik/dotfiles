@@ -1,20 +1,22 @@
 # Git Config
 
-If you're not me, edit ~/.gitconfig.local/ and replace my git name and email with yours
+If you're not me, edit `~/.gitconfig.local/` and replace my git name and email with yours
 
 # MacOS Config
 
 To change MacOS settings
 
-cd ~
+```bash
 ./.osx
+```
 
 # Extras
 
-Powerline Fonts (set iTerm to use Inconsolata-g)
-tmux-mem-cpu-load
-tmux-battery
-rbenv-ctags
+## Extras
+ - [Powerline Fonts](https://github.com/powerline/fonts) (set iTerm to use Inconsolata-g)
+ - [tmux-mem-cpu-load](https://github.com/thewtex/tmux-mem-cpu-load)
+ - [tmux-battery](https://github.com/tmux-plugins/tmux-battery)
+ - [rbenv-ctags](https://github.com/tpope/rbenv-ctags)
 
 thoughtbot dotfiles
 ===================
