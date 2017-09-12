@@ -60,7 +60,7 @@ Plug 'ecomba/vim-ruby-refactoring'
 " Plug 'nonius/cargo.vim'
 
 "Scala
-Plug 'derekwyatt/vim-scala'
+" Plug 'derekwyatt/vim-scala'
 " Plug 'ensime/ensime-vim'
 
 "Terraform
