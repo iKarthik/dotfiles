@@ -34,18 +34,22 @@ alias ag='ag --path-to-ignore=~/.agignore'
 
 #tree
 alias tree='tree -I "$(cat ~/.treeignore)"'
-alias t='tree -a --dirsfirst'
-alias t1='tree -a -L 1 --dirsfirst'
-alias t2='tree -a -L 2 --dirsfirst'
-alias t3='tree -a -L 3 --dirsfirst'
-alias t4='tree -a -L 4 --dirsfirst'
-alias t5='tree -a -L 5 --dirsfirst'
-alias td='tree -a -d --dirsfirst'
-alias td1='tree -a -d -L 1 --dirsfirst'
-alias td2='tree -a -d -L 2 --dirsfirst'
-alias td3='tree -a -d -L 3 --dirsfirst'
-alias td4='tree -a -d -L 4 --dirsfirst'
-alias td5='tree -a -d -L 5 --dirsfirst'
+alias t='tre'
+alias t1='tre -L 1'
+alias t2='tre -L 2'
+alias t3='tre -L 3'
+alias t4='tre -L 4'
+alias t5='tre -L 5'
+alias td='tre -d'
+alias td1='tre -d -L 1'
+alias td2='tre -d -L 2'
+alias td3='tre -d -L 3'
+alias td4='tre -d -L 4'
+alias td5='tre -d -L 5'
+
+tre() {
+  tree -aC -I "$(cat ~/.treeignore)" --dirsfirst "$@" | less -FRNX
+}
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
   alias copy='xclip -sel clip'
@@ -61,10 +65,6 @@ fi
 # Create a new directory and enter it
 mkd() {
   mkdir -p "$@" && cd "$@"
-}
-
-tre() {
-  tree -aC -I '.git' --dirsfirst "$@" | less -FRNX
 }
 
 #color man pages
