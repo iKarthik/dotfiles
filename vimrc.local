@@ -86,6 +86,9 @@ let g:elixir_showerror=1
 let g:elixir_autobuild=1
 let g:elixir_docpreview=1
 
+"alchemist
+let g:alchemist#elixir_erlang_src = '/usr/local/Cellar/elixir/1.5.1'
+
 "vim-test
 "
 let test#ruby#rspec#executable = 'tmux_unzoom; bin/rspec'
