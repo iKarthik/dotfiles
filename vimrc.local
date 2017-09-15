@@ -227,6 +227,7 @@ nmap <Leader>d :call RemoveAllDebuggers()<cr>
 
 "vim-buffonly close all but current buffer
 nnoremap <leader>Q :BufOnly<CR>
+nnoremap <leader>o :only<BR>
 
 "vim-power-close
 nnoremap <silent> <leader>q :call powerclose#close()<CR>
