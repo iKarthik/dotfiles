@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 set -eux
 
 brew update
@@ -21,6 +22,10 @@ pushd ~/.rbenv/plugins
     popd
   done
 popd
+
+if [ -x "$(command -v gcloud)" ]; then
+  gcloud  components update
+fi
 
 cowsay "don't forget to update ~/src/dotfiles"
 
