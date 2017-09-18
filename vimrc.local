@@ -21,23 +21,20 @@ set list listchars=tab:»·,trail:·
 " set undofile
 " set undodir=~/.vim/undodir
 
-"Color and UI
-colorscheme gruvbox
-set background=dark
-let g:gruvbox_italic=0
-let g:gruvbox_contrast_dark='hard'
+let base16colorspace=256
+colorscheme base16-solarized-light
 
-"airline
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#branch#format = 1
-let g:airline#extensions#default#section_truncate_width = {
-      \ 'b': 150,
-      \ 'x': 190,
-      \ 'y': 180,
-      \ 'z': 170,
-      \ }
-let g:airline#extensions#ale#enabled = 1
+" Format the status line
+set laststatus=2
+set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l/%L\ \ Column:\ %c
+
+" Returns true if paste mode is enabled
+function! HasPaste()
+    if &paste
+        return 'PASTE MODE  '
+    endif
+    return ''
+endfunction
 
 "gitgutter
 set signcolumn=yes
@@ -334,6 +331,8 @@ nnoremap <F1> :call ToggleElixirTestCmd()<CR>
 
 nnoremap <F12> :call AutoPairsToggle()<CR>
 
+nnoremap <F2> :setlocal paste!<cr>
+
 " "====== neovim =======
 if has('nvim')
   :tnoremap <c-h> <C-\><C-n><C-w>h
@@ -343,7 +342,6 @@ if has('nvim')
   :tnoremap <c-x> <C-\><C-n>
   :tnoremap <leader>q <C-\><C-n>:bd!<CR>
 
-  nnoremap <leader>c :call neoterm#open()<CR>
 
   " let test#strategy = "neoterm"
   let test#strategy = "tslime"
