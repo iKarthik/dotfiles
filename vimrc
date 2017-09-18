@@ -99,6 +99,10 @@ set colorcolumn=+1
 " Numbers
 set number
 set numberwidth=5
+" Specify the behavior when switching between buffers 
+
+" when using quickfix, jump to window with buffer it is already open
+set switchbuf=useopen
 
 " Tab completion
 " will insert tab at beginning of line,
