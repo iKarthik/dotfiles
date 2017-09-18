@@ -1,7 +1,5 @@
 - url: https://github.com/tpope/rbenv-ctags.git
   path: ~/.rbenv/plugins/rbenv-ctags
-# - url: http://github.com/thoughtbot/dotfiles.git
-#   path: ~/src
 - url: https://github.com/olivierverdier/zsh-git-prompt.git
   path: ~/src
 - url: https://github.com/tmux-plugins/tmux-battery.git

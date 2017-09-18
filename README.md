@@ -1,8 +1,8 @@
-# Git Config
+## Git Config
 
 If you're not me, edit `~/.gitconfig.local/` and replace my git name and email with yours
 
-# MacOS Config
+## MacOS Config
 
 To change MacOS settings
 
@@ -10,12 +10,16 @@ To change MacOS settings
 ./.osx
 ```
 
-# Extras
+## Extras
 
- - [Powerline Fonts](https://github.com/powerline/fonts) (set iTerm to use Inconsolata-g)
+ - [Input Font](http://input.fontbureau.com/)
  - [tmux-mem-cpu-load](https://github.com/thewtex/tmux-mem-cpu-load)
  - [tmux-battery](https://github.com/tmux-plugins/tmux-battery)
  - [rbenv-ctags](https://github.com/tpope/rbenv-ctags)
+ - [zsh-git-prompt](https://github.com/olivierverdier/zsh-git-prompt.git)
+ - [z](https://github.com/rupa/z.git)
+ - [zsh-completions](https://github.com/zsh-users/zsh-completions.git)
+ - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting.git)
 
 thoughtbot dotfiles
 ===================
