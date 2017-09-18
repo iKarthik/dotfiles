@@ -21,9 +21,6 @@ set list listchars=tab:»·,trail:·
 " set undofile
 " set undodir=~/.vim/undodir
 
-let base16colorspace=256
-colorscheme base16-solarized-light
-
 " Format the status line
 set laststatus=2
 set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l/%L\ \ Column:\ %c
@@ -92,6 +89,13 @@ let test#ruby#rspec#executable = 'tmux_unzoom; bin/rspec'
 " let test#elixir#exunit#executable = 'iex -S mix test --trace'
 let test#elixir#exunit#executable = 'tmux_unzoom; mix test'
 let test#filename_modifier = ':~'
+
+" gruvbox
+"Color and UI
+set background=dark
+let g:gruvbox_italic=0
+let g:gruvbox_contrast_dark='medium'
+colorscheme gruvbox
 
 "Write on entering and leaving buffers
 au FocusGained,BufEnter * :silent! !
@@ -181,6 +185,7 @@ map <Leader>y :BTags<CR>
 map <Leader>Y :Tags<CR>
 map <Leader>; :History:<CR>
 map <Leader>/ :History/<CR>
+map <Leader>c :Colors<CR>
 
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
 
