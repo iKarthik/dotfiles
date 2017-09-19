@@ -163,6 +163,9 @@ let g:ycm_semantic_triggers = {
 
 autocmd FileType netrw setl bufhidden=wipe
 
+autocmd FileType scala nnoremap <Leader>c :Tmux tmux_unzoom; sbt compile<CR>
+autocmd FileType scala nnoremap <Leader>r :Tmux tmux_unzoom; sbt "run --run-all"<CR>
+
 "permanently and unequivocably disable conceal
 if version >= 703
   set conceallevel=0
@@ -185,7 +188,6 @@ map <Leader>y :BTags<CR>
 map <Leader>Y :Tags<CR>
 map <Leader>; :History:<CR>
 map <Leader>/ :History/<CR>
-map <Leader>c :Colors<CR>
 
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
 
