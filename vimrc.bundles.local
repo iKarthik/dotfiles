@@ -1,3 +1,4 @@
+Plug 'itchyny/lightline.vim'
 Plug 'morhetz/gruvbox'
 
 Plug 'sjl/gundo.vim'

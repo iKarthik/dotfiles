@@ -6,11 +6,13 @@ bind-key -T copy-mode-vi 'y' send -X copy-pipe-and-cancel "reattach-to-user-name
 
 # Status bar colors
 # set -g status-bg '#222200'
-set -g status-fg '#cccccc'
+# set -g status-fg '#cccccc'
 
 # Inverse colors for selected window
 # set-window-option -g window-status-current-bg '#5fafff'
-set-window-option -g window-status-current-fg '#ffff22'
+set-window-option -g window-status-current-fg '#ffffff'
+set -g status-bg '#006400'
+# set -g status-fg '#aaaaaa'
 
 # Easy reload tmux config
 unbind r
@@ -24,10 +26,10 @@ bind-key s split-window -v
 bind-key v split-window -h
 
 # Easy resize
-# bind-key -r < resize-pane -L 3
-# bind-key -r > resize-pane -R 3
-# bind-key -r + resize-pane -U 1
-# bind-key -r = resize-pane -D 1
+bind-key -r H resize-pane -L 3
+bind-key -r L resize-pane -R 3
+bind-key -r K resize-pane -U 1
+bind-key -r J resize-pane -D 1
 
 # Moving windows
 bind-key -r > swap-window -t :+
@@ -46,8 +48,12 @@ set -g status-interval 2
 # set -g status-left-length 120
 # set -g status-justify 'centre'
 
-set -g status-right "#[fg=white]%m-%dT%H:%M:%S%z #[fg=black]#(date -u +%%m-%%dT%%H:%%M:%%S) #{battery_icon} #[fg=green]#{battery_percentage} #{battery_remain}#(tmux-mem-cpu-load -q --colors --interval 1 --graph-lines 0 --averages-count 1 --mem-mode 1)"
+set -g status-right "#{battery_icon} #{battery_percentage} #[fg=green]#(tmux-mem-cpu-load --interval 1 --graph-lines 0 --averages-count 1 --mem-mode 1) #[fg=white]#(date -u +%%m-%%dT%%H:%%M:%%S) %m-%dT%H:%M:%S%z"
 set -g status-right-length 220
 
 set -g focus-events on
 run-shell ~/src/tmux-battery/battery.tmux
+
+set -g window-status-format '#I:#(pwd="#{pane_current_path}"; echo ${pwd####*/})#F'
+set -g window-status-current-format '#I:#(pwd="#{pane_current_path}"; echo ${pwd####*/})#F'
+set-option -g status-interval 1

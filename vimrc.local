@@ -36,6 +36,20 @@ endfunction
 "gitgutter
 set signcolumn=yes
 
+let g:lightline = {
+      \ 'active': {
+      \   'right': [ [ 'lineinfo' ],
+      \              [ 'percent' ],
+      \              [ 'fileencoding', 'filetype'] ]
+      \ },
+      \ 'component_function': {
+      \   'filename': 'LightlineFilename',
+      \ },
+      \}
+
+function! LightlineFilename()
+  return expand('%:p') !=# '' ? expand('%:p') : '[No Name]'
+endfunction
 " "syntastic
 " let g:syntastic_always_populate_loc_list = 1
 " let g:syntastic_auto_loc_list = 0
@@ -124,6 +138,7 @@ au BufRead,BufNewFile Gitfile setf yaml
 au BufRead,BufNewFile pryrc setf ruby
 au BufRead,BufNewFile Rakefile setf ruby
 au BufRead,BufNewFile Dangerfile setf ruby
+au BufRead,BufNewFile *.sbt setf scala
 
 au FileType gitcommit setlocal spell
 au FileType markdown setlocal spell
@@ -193,6 +208,16 @@ nnoremap <leader>jd :YcmCompleter GoTo<CR>
 
 " autoindent file
 map <Leader>i mzgg=G`z<CR>
+autocmd FileType scala map <Leader>i :Neoformat<CR>
+
+" replace the file, instead of updating buffer
+let g:neoformat_scala_scalafmt = {
+            \ 'exe': 'scalafmt',
+            \ 'replace': 1 
+            \ }
+
+let g:neoformat_enabled_python = ['scalafmt']
+
 map <Leader>rs :s/'/"<CR>
 map <Leader>vs :source ~/.vimrc.local<CR>
 " convert hash to Ruby 1.9 style
@@ -203,7 +228,7 @@ map <Leader>e :RExtractMethod<CR>
 map <Leader>a :A<CR>
 map <Leader>s :AV<CR>
 
-map <Leader>w :wa<CR>
+map <silent><Leader>w :wa<CR>
 
 " vim-go
 au FileType go nmap <leader>rr <Plug>(go-run)
@@ -223,6 +248,7 @@ nmap <silent> <leader>T :TestFile<CR>
 nmap <silent> <leader>A :TestSuite<CR>
 " nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>v  :TestVisit<CR>
+let test#scala#scalatest#file_pattern = ".*Test.scala$"
 
 "vim-infer-debugger
 nmap <Leader>P :call AddDebugger("O")<cr>
@@ -336,6 +362,8 @@ function! ToggleElixirTestCmd()
 endfunction
 nnoremap <F1> :call ToggleElixirTestCmd()<CR>
 
+" let g:AutoPairsMultilineClose = 0
+" let g:AutoPairsShortcutFastWrap = "<C-M>"
 nnoremap <F12> :call AutoPairsToggle()<CR>
 
 nnoremap <F2> :setlocal paste!<cr>
