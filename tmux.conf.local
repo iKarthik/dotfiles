@@ -22,8 +22,8 @@ set -s escape-time 0
 setw -g aggressive-resize on
 
 # vim's definition of a horizontal/vertical split is reversed from tmux's
-bind-key s split-window -v
-bind-key v split-window -h
+bind-key s split-window -v -c '#{pane_current_path}'
+bind-key v split-window -h -c '#{pane_current_path}'
 
 # Easy resize
 bind-key -r H resize-pane -L 3
