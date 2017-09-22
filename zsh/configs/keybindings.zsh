@@ -2,8 +2,11 @@
 stty -ixon
 
 # vi mode
-bindkey -v
-bindkey "^F" vi-cmd-mode
+# bindkey -v
+# bindkey "^F" vi-cmd-mode
+
+# emacs mode
+bindkey -e
 
 # handy keybindings
 bindkey "^A" beginning-of-line
