@@ -236,7 +236,8 @@ nmap <silent> <leader>T :TestFile<CR>
 nmap <silent> <leader>A :TestSuite<CR>
 " nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>v  :TestVisit<CR>
-let test#scala#scalatest#file_pattern = ".*Test.scala$"
+
+autocmd FileType scala nnoremap <Leader>t :Tmux tmux_unzoom; sbt test<CR>
 
 "vim-infer-debugger
 nmap <Leader>P :call AddDebugger("O")<cr>
