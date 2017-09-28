@@ -28,7 +28,7 @@ let g:lightline = {
       \ 'active': {
       \   'right': [ [ 'lineinfo' ],
       \              [ 'percent' ],
-      \              [ 'fileencoding', 'filetype'] ]
+      \              [ 'filetype'] ]
       \ },
       \ 'component_function': {
       \   'filename': 'LightlineFilename',

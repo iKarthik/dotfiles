@@ -1,5 +1,5 @@
 # prevent ^d from exiting the shell
-#setopt ignoreeof
+setopt ignoreeof
 #
 #so I can run rcup without any env variables
 export RCRC=$HOME/src/bradrc/rcrc
