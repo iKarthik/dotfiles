@@ -3,7 +3,7 @@
 fancy_echo "Upgrading Homebrew formulae ..."
 
 brew upgrade
-brew bundle --file=~/src/bradrc/Brewfile
+brew bundle --file=~/src/dotfiles/Brewfile
 
 fancy_echo "installing fzf shell extensions"
 /usr/local/opt/fzf/install
@@ -18,7 +18,7 @@ if [ -r "$HOME/.rcrc" ]; then
 fi
 
 fancy_echo "bundle install system gems"
-bundle install --system --gemfile=~/src/bradrc/Gemfile
+bundle install --system --gemfile=~/src/dotfiles/Gemfile
 
 # brew cask install seil
 # brew cask install --appdir="/Applications" google-chrome

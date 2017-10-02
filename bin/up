@@ -9,7 +9,7 @@ brew reinstall --HEAD fzf
 npm update -g
 gem update --system
 
-pushd ~/src/bradrc
+pushd ~/src/dotfiles
   bundle update
 popd
 

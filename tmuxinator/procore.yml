@@ -29,7 +29,7 @@ root: ~/src/procore
 
 windows:
   - dot:
-      root: ~/src/bradrc
+      root: ~/src/dotfiles
       panes:
         - e
   - e:

@@ -2,7 +2,7 @@
 setopt ignoreeof
 #
 #so I can run rcup without any env variables
-export RCRC=$HOME/src/bradrc/rcrc
+export RCRC=$HOME/src/dotfiles/rcrc
 
 #colors used for LS
 export LSCOLORS="gxfxcxdxbxegedabagacad"
