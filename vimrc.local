@@ -169,6 +169,11 @@ autocmd FileType netrw setl bufhidden=wipe
 autocmd FileType scala nnoremap <Leader>c :Tmux tmux_unzoom; sbt compile<CR>
 autocmd FileType scala nnoremap <Leader>r :Tmux tmux_unzoom; sbt "run --run-all"<CR>
 
+" vim-ensime
+autocmd FileType scala nnoremap <Leader>] :EnDeclaration
+autocmd FileType scala nnoremap <Leader>I :EnInspectType
+
+
 "permanently and unequivocably disable conceal
 if version >= 703
   set conceallevel=0
