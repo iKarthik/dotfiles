@@ -211,10 +211,7 @@ let g:neoformat_scala_scalafmt = {
 
 let g:neoformat_enabled_python = ['scalafmt']
 
-map <Leader>rs :s/'/"<CR>
 map <Leader>vs :source ~/.vimrc.local<CR>
-" convert hash to Ruby 1.9 style
-map <Leader>hs :s/:\([^ ]*\)\(\s*\)=>/\1:/g<CR>
 "vim-ruby-refactor
 map <Leader>e :RExtractMethod<CR>
 "vim rails
