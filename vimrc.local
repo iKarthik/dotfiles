@@ -166,8 +166,8 @@ let g:ycm_semantic_triggers = {
 
 autocmd FileType netrw setl bufhidden=wipe
 
-autocmd FileType scala nnoremap <Leader>c :Tmux tmux_unzoom; sbt compile<CR>
-autocmd FileType scala nnoremap <Leader>r :Tmux tmux_unzoom; sbt "run --run-all"<CR>
+autocmd FileType scala nnoremap <Leader>c :wa<CR> :Tmux tmux_unzoom; sbt compile<CR>
+autocmd FileType scala nnoremap <Leader>r :wa<CR> :Tmux tmux_unzoom; sbt "run --run-all"<CR>
 
 " vim-ensime
 autocmd FileType scala nnoremap <Leader>] :EnDeclaration
@@ -242,7 +242,7 @@ nmap <silent> <leader>A :TestSuite<CR>
 " nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>v  :TestVisit<CR>
 
-autocmd FileType scala nnoremap <Leader>t :Tmux tmux_unzoom; sbt test<CR>
+autocmd FileType scala nnoremap <Leader>t :wa<CR> :Tmux tmux_unzoom; sbt test<CR>
 
 "vim-infer-debugger
 nmap <Leader>P :call AddDebugger("O")<cr>
