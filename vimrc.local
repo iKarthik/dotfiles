@@ -209,7 +209,7 @@ let g:neoformat_scala_scalafmt = {
             \ 'replace': 1 
             \ }
 
-let g:neoformat_enabled_python = ['scalafmt']
+let g:neoformat_enabled_scala= ['scalafmt']
 
 map <Leader>vs :source ~/.vimrc.local<CR>
 "vim-ruby-refactor

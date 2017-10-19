@@ -100,3 +100,6 @@ tmux_unzoom() {
     tmux resize-pane -Z
   fi
 }
+
+# Python
+alias prp="pipenv run python"
