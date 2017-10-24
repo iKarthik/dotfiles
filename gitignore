@@ -11,5 +11,5 @@ tags
 tmp/**/*
 !tmp/cache/.keep
 *.pyc
-tags.tmp
+tags.temp
 tags.lock
