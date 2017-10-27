@@ -318,7 +318,10 @@ nnoremap & :Ag <C-R><C-W><CR>
 imap <c-e> <c-o>$
 imap <c-a> <c-o>^
 inoremap <C-\> <Del>
-inoremap <C-x> <C-o>x
+
+" # emacs style
+imap <c-e> <c-o>$
+imap <c-a> <c-o>^
 
 "## Control key mappings ##
 :nnoremap <c-p> k$
