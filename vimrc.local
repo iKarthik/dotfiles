@@ -240,6 +240,7 @@ nmap <silent> <leader>A :TestSuite<CR>
 nmap <silent> <leader>v  :TestVisit<CR>
 
 autocmd FileType scala nnoremap <Leader>t :wa<CR> :Tmux tmux_unzoom; sbt test<CR>
+autocmd FileType scala nnoremap <Leader>T :wa<CR> :Tmux tmux_unzoom; sbt test<CR>
 
 "vim-infer-debugger
 nmap <Leader>P :call AddDebugger("O")<cr>
