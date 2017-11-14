@@ -156,7 +156,7 @@ autocmd FileType css vnoremap <buffer> <c-f> :call RangeCSSBeautify()<cr>
 autocmd FileType scss vnoremap <buffer> <c-f> :call RangeCSSBeautify()<cr>
 
 "vim-better-whitespace
-autocmd FileType ruby,elixir,javascript,scala autocmd BufWritePre <buffer> StripWhitespace
+autocmd FileType ruby,elixir,javascript,scala,sql autocmd BufWritePre <buffer> StripWhitespace
 
 " let g:syntastic_csslint_args="--ignore=outline-none"
 let g:ycm_semantic_triggers = {
