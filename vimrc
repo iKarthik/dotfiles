@@ -47,7 +47,7 @@ augroup vimrcEx
 
   " ALE linting events
   if g:has_async
-    set updatetime=1000
+    set updatetime=4000
     let g:ale_lint_on_text_changed = 0
     autocmd CursorHold * call ale#Lint()
     autocmd CursorHoldI * call ale#Lint()
