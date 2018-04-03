@@ -156,7 +156,7 @@ autocmd FileType css vnoremap <buffer> <c-f> :call RangeCSSBeautify()<cr>
 autocmd FileType scss vnoremap <buffer> <c-f> :call RangeCSSBeautify()<cr>
 
 "vim-better-whitespace
-autocmd FileType ruby,elixir,javascript,scala,sql autocmd BufWritePre <buffer> StripWhitespace
+autocmd FileType ruby,elixir,javascript,scala,sql,python autocmd BufWritePre <buffer> StripWhitespace
 
 " let g:syntastic_csslint_args="--ignore=outline-none"
 let g:ycm_semantic_triggers = {
@@ -246,6 +246,19 @@ autocmd FileType scala nnoremap <Leader>T :wa<CR> :Tmux tmux_unzoom; sbt test<CR
 nmap <Leader>P :call AddDebugger("O")<cr>
 nmap <Leader>p :call AddDebugger("o")<cr>
 nmap <Leader>d :call RemoveAllDebuggers()<cr>
+ let g:debugger_array = [['\.rb',             'require "pry"; binding.pry'],
+                          \['\.rake',           'require "pry"; binding.pry'],
+                          \['\.ex$',            'require IEx; IEx.pry'],
+                          \['\.exs',            'require IEx; IEx.pry'],
+                          \['\.erb',            '<% require "pry"; binding.pry %>'],
+                          \['\.haml',           '- require "pry"; binding.pry'],
+                          \['\.eex',            '<% require IEx; IEx.pry %>'],
+                          \['\.coffee$',        'debugger'],
+                          \['\.json\.jbuilder', 'require "pry"; binding.pry'],
+                          \['\.js$',            'debugger;'],
+                          \['\.jsx$',           'debugger;'],
+                          \['\.rs$',            'println!("{:?}", )'],
+                          \['\.py$',            'import pdb; pdb.set_trace()']]
 
 "vim-buffonly close all but current buffer
 nnoremap <leader>Q :BufOnly<CR>
