@@ -33,6 +33,10 @@ alias tf='terraform'
 #ag
 alias ag='ag --path-to-ignore=~/.agignore'
 
+#python
+alias python=python3
+alias pip=pip3
+
 #tree
 alias tree='tree -I "$(cat ~/.treeignore)"'
 alias t='tre'
@@ -47,6 +51,7 @@ alias td2='tre -d -L 2'
 alias td3='tre -d -L 3'
 alias td4='tre -d -L 4'
 alias td5='tre -d -L 5'
+
 
 tre() {
   tree -aC -I "$(cat ~/.treeignore)" --dirsfirst "$@" | less -FRNX
