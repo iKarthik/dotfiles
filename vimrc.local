@@ -18,8 +18,9 @@ set timeoutlen=500
 let g:netrw_liststyle=3
 " Display extra whitespace
 set list listchars=tab:»·,trail:·
-" set undofile
-" set undodir=~/.vim/undodir
+set undofile
+set undodir=~/.vim/undodir
+:silent call system('mkdir -p ' . &undodir)
 
 "gitgutter
 set signcolumn=yes
@@ -91,6 +92,11 @@ let test#ruby#rspec#executable = 'tmux_unzoom; bundle exec rspec'
 " let test#elixir#exunit#executable = 'iex -S mix test --trace'
 let test#elixir#exunit#executable = 'tmux_unzoom; mix test'
 let test#filename_modifier = ':~'
+
+"vim-ale
+let g:ale_fixers = {
+\   'python': ['autopep8'],
+\}
 
 " gruvbox
 "Color and UI
@@ -258,7 +264,7 @@ nmap <Leader>d :call RemoveAllDebuggers()<cr>
                           \['\.js$',            'debugger;'],
                           \['\.jsx$',           'debugger;'],
                           \['\.rs$',            'println!("{:?}", )'],
-                          \['\.py$',            'import pdb; pdb.set_trace()']]
+                          \['\.py$',            'import ipdb; ipdb.set_trace()']]
 
 "vim-buffonly close all but current buffer
 nnoremap <leader>Q :BufOnly<CR>
