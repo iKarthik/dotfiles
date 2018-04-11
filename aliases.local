@@ -1,3 +1,6 @@
+#nvim
+alias vim=nvim
+
 #grep
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
