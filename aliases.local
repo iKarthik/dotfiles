@@ -39,6 +39,9 @@ alias ag='ag --path-to-ignore=~/.agignore'
 #python
 alias py=python3
 
+#psql
+alias psql="PAGER=\"less -iMSx4 -FX\" psql"
+
 #tree
 alias tree='tree -I "$(cat ~/.treeignore)"'
 alias t='tre'
