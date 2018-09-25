@@ -5,7 +5,7 @@ if defined?(PryByebug)
   Pry.commands.alias_command 'ff', 'finish'
 end
 Pry.commands.alias_command 'ee', 'exit'
-Pry.commands.alias_command 'sh', 'show-source'
+# Pry.commands.alias_command 'e!', 'exit!'
 Pry.commands.alias_command 'dd', 'disable-pry' rescue nil
 Pry.commands.alias_command "hh", "hist -T 20", desc: "Last 20 commands"
 Pry.commands.alias_command "hg", "hist -T 20 -G", desc: "Up to 20 commands matching expression"
@@ -29,12 +29,12 @@ rescue LoadError
   warn "awesome_print not installed"
 end
 
-begin
-  require 'factory_girl'
-  FactoryGirl.find_definitions
-  include FactoryGirl::Syntax::Methods
-rescue => e
-end
+# begin
+#   require 'factory_girl'
+#   FactoryGirl.find_definitions
+#   include FactoryGirl::Syntax::Methods
+# rescue => e
+# end
 
 if ENV['RAILS_ENV'] || defined?(ActiveRecord)
   begin
