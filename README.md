@@ -12,7 +12,7 @@ To change MacOS settings
 
 ## Extras
 
- - [Input Font](http://input.fontbureau.com/)
+ - [Inconsolata-g](https://github.com/powerline/fonts/tree/master/Inconsolata-g)
  - [tmux-mem-cpu-load](https://github.com/thewtex/tmux-mem-cpu-load)
  - [tmux-battery](https://github.com/tmux-plugins/tmux-battery)
  - [rbenv-ctags](https://github.com/tpope/rbenv-ctags)

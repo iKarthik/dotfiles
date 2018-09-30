@@ -23,7 +23,17 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'AndrewRadev/switch.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'mcasper/vim-infer-debugger'
-Plug 'Valloric/YouCompleteMe'
+" Plug 'Valloric/YouCompleteMe'
+
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
+
 Plug 'sbdchd/neoformat'
 
 Plug 'tmux-plugins/vim-tmux-focus-events'
@@ -52,13 +62,16 @@ Plug 'ngmy/vim-rubocop'
 Plug 'ecomba/vim-ruby-refactoring'
 
 "Rust
-" Plug 'rust-lang/rust.vim'
-" Plug 'timonv/vim-cargo'
-" Plug 'nonius/cargo.vim'
+Plug 'rust-lang/rust.vim'
+Plug 'timonv/vim-cargo'
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 
 "Scala
 " Plug 'derekwyatt/vim-scala'
-Plug 'ensime/ensime-vim'
+" Plug 'ensime/ensime-vim'
 
 "Terraform
 Plug 'hashivim/vim-terraform'

@@ -75,8 +75,31 @@ let g:wordmotion_mappings = {
       \ 'iw' : 'i<tab>'
       \ }
 
-" YouCompleteMe
-let g:ycm_rust_src_path = '/usr/local/src/rust/src'
+" " YouCompleteMe
+" let g:ycm_rust_src_path = '/usr/local/src/rust/src'
+"
+let g:deoplete#sources#rust#racer_binary='/Users/bradurani/.cargo/bin/racer'
+let g:racer_cmd='/Users/bradurani/.cargo/bin/racer'
+let g:deoplete#sources#rust#rust_source_path='/User/bradurani/src/rust'
+let g:deoplete#sources#rust#show_duplicates=1
+call deoplete#custom#source('LanguageClient',
+      \ 'min_pattern_length',
+      \ 1)
+
+let g:racer_experimental_completer=1
+"
+" LC
+let g:LanguageClient_autoStart = 1
+let g:LanguageClient_serverCommands = {
+    \ 'python': ['pyls'],
+    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+    \ 'javascript': ['javascript-typescript-stdio'],
+    \ 'go': ['go-langserver'] }
+
+noremap <silent> <leader>rh :call LanguageClient_textDocument_hover()<CR>
+noremap <silent> <leader>rd :call LanguageClient_textDocument_definition()<CR>
+noremap <silent> <leader>rr :call LanguageClient_textDocument_rename()<CR>
+noremap <silent> <leader>rs :call LanugageClient_textDocument_documentSymbol()<CR>
 
 "elixir.nvim
 let g:elixir_showerror=1
@@ -97,6 +120,11 @@ let test#filename_modifier = ':~'
 let g:ale_fixers = {
 \   'python': ['autopep8'],
 \}
+let g:ale_linters = {
+      \ 'elixir': [],
+      \ 'rust': ['rls'],
+      \ 'ruby': ['rubocop', 'ruby']
+      \}
 
 " gruvbox
 "Color and UI
@@ -268,7 +296,7 @@ nmap <Leader>d :call RemoveAllDebuggers()<cr>
 
 "vim-buffonly close all but current buffer
 nnoremap <leader>Q :BufOnly<CR>
-nnoremap <leader>o :only<BR>
+nnoremap <leader>o :only<CR>
 
 "vim-power-close
 nnoremap <silent> <leader>q :call powerclose#close()<CR>
@@ -284,8 +312,7 @@ let g:tslime_always_current_session = 1
 let g:tslime_always_current_window = 1
 
 "vim-cargo
-autocmd FileType rust map <Leader>rc :wa<CR> :CargoRun<CR>
-autocmd FileType rust map <Leader>rt :wa<CR> :CargoTest<CR>
+autocmd FileType rust map <Leader><CR> :wa<CR> :RustRun<CR>
 
 " Clear search highlight on Enter
 function! MapCR()
