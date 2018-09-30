@@ -202,7 +202,7 @@ What's in it?
 
 [vim](http://www.vim.org/) configuration:
 
-* [Ctrl-P](https://github.com/kien/ctrlp.vim) for fuzzy file/buffer/tag finding.
+* [Ctrl-P](https://github.com/ctrlpvim/ctrlp.vim) for fuzzy file/buffer/tag finding.
 * [Rails.vim](https://github.com/tpope/vim-rails) for enhanced navigation of
   Rails file structure via `gf` and `:A` (alternate), `:Rextract` partials,
   `:Rinvert` migrations, etc.
@@ -240,7 +240,7 @@ configuration:
 [Ruby](https://www.ruby-lang.org/en/) configuration:
 
 * Add trusted binstubs to the `PATH`.
-* Load rbenv into the shell, adding shims onto our `PATH`.
+* Load the ASDF version manager.
 
 Shell aliases and scripts:
 
@@ -263,7 +263,7 @@ in this project.
 License
 -------
 
-dotfiles is copyright © 2009-2017 thoughtbot. It is free software, and may be
+dotfiles is copyright © 2009-2018 thoughtbot. It is free software, and may be
 redistributed under the terms specified in the [`LICENSE`] file.
 
 [`LICENSE`]: /LICENSE
