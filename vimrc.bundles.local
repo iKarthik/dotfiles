@@ -63,7 +63,6 @@ Plug 'ecomba/vim-ruby-refactoring'
 
 "Rust
 Plug 'rust-lang/rust.vim'
-Plug 'timonv/vim-cargo'
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
