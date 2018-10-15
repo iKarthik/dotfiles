@@ -26,28 +26,35 @@ set undodir=~/.vim/undodir
 set signcolumn=yes
 let g:gitgutter_map_keys = 0
 
+function! LinterStatus() abort
+    let l:counts = ale#statusline#Count(bufnr(''))
+
+    let l:all_errors = l:counts.error + l:counts.style_error
+    let l:all_non_errors = l:counts.total - l:all_errors
+
+    return l:counts.total == 0 ? 'OK' : printf(
+    \   '%dW %dE',
+    \   all_non_errors,
+    \   all_errors
+    \)
+endfunction
+
 let g:lightline = {
       \ 'active': {
       \   'right': [ [ 'lineinfo' ],
       \              [ 'percent' ],
-      \              [ 'filetype'] ]
+      \              [ 'filetype'],
+      \              [ 'linterstatus' ]]
       \ },
       \ 'component_function': {
       \   'filename': 'LightlineFilename',
-      \ },
+      \     'linterstatus': 'LinterStatus'
+      \ }
       \}
 
 function! LightlineFilename()
   return expand('%@%') !=# '' ? expand('%@%') : '[No Name]'
 endfunction
-" "syntastic
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 0
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 1
-" let g:syntastic_javascript_checkers = ['eslint']
-" "syntastic + vim-elm
-" let g:elm_syntastic_show_warnings = 1
 
 "vim-elm
 let g:elm_format_autosave = 1
@@ -71,29 +78,29 @@ let g:wordmotion_mappings = {
       \ 'iw' : 'i<tab>'
       \ }
 
-let g:deoplete#sources#rust#racer_binary='/Users/bradurani/.cargo/bin/racer'
-let g:racer_cmd='/Users/bradurani/.cargo/bin/racer'
-let g:deoplete#sources#rust#rust_source_path='/User/bradurani/src/rust'
-let g:deoplete#sources#rust#show_duplicates=1
-call deoplete#custom#source('LanguageClient',
-      \ 'min_pattern_length',
-      \ 1)
+" let g:deoplete#sources#rust#racer_binary='/Users/bradurani/.cargo/bin/racer'
+" let g:racer_cmd='/Users/bradurani/.cargo/bin/racer'
+" let g:deoplete#sources#rust#rust_source_path='/User/bradurani/src/rust'
+" let g:deoplete#sources#rust#show_duplicates=1
+" call deoplete#custom#source('LanguageClient',
+"       \ 'min_pattern_length',
+"       \ 1)
 
 let g:racer_experimental_completer=1
 
 " LC
-let g:LanguageClient_autoStart = 1
-let g:LanguageClient_serverCommands = {
-    \ 'python': ['pyls'],
-    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
-    \ 'javascript': ['javascript-typescript-stdio'],
-    \ 'go': ['go-langserver'] }
-
-noremap <silent> <leader>h :call LanguageClient_textDocument_hover()<CR>
-" noremap <silent> <leader>rd :call LanguageClient_textDocument_definition()<CR>
-noremap <C-]> :call LanguageClient_textDocument_definition()<CR>
-noremap <silent> <leader>rr :call LanguageClient_textDocument_rename()<CR>
-noremap <silent> <leader>rs :call LanugageClient_textDocument_documentSymbol()<CR>
+" let g:LanguageClient_autoStart = 1
+" let g:LanguageClient_serverCommands = {
+"     \ 'python': ['pyls'],
+"     \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+"     \ 'javascript': ['javascript-typescript-stdio'],
+"     \ 'go': ['go-langserver'] }
+"
+" noremap <silent> <leader>h :call LanguageClient_textDocument_hover()<CR>
+" " noremap <silent> <leader>rd :call LanguageClient_textDocument_definition()<CR>
+" noremap <C-]> :call LanguageClient_textDocument_definition()<CR>
+" noremap <silent> <leader>rr :call LanguageClient_textDocument_rename()<CR>
+" noremap <silent> <leader>rs :call LanugageClient_textDocument_documentSymbol()<CR>
 
 "elixir.nvim
 let g:elixir_showerror=1
@@ -113,12 +120,26 @@ let test#filename_modifier = ':~'
 "vim-ale
 let g:ale_fixers = {
 \   'python': ['autopep8'],
+\    'javascript': ['prettier', 'eslint'],
+\    'rust': ['rustfmt']
 \}
 let g:ale_linters = {
       \ 'elixir': [],
       \ 'rust': ['rls'],
       \ 'ruby': ['rubocop', 'ruby']
       \}
+let g:ale_completion_enabled = 1
+let g:ale_sign_column_always = 1
+" let g:ale_open_list = 1
+let g:ale_lint_on_insert_leave = 1
+let g:ale_set_highlights = 0
+" TODO use ALE for whitespace? Extra lines?
+
+noremap <silent> <leader>h :ALEHover<CR>
+noremap <silent> <leader>u :ALEFindReferences<CR>
+noremap <silent> <C-]> :ALEGoToDefinition<CR>
+noremap <silent> <C-S-]> :ALEGoToDefinitionInTab<CR>
+
 
 " gruvbox
 "Color and UI
@@ -209,7 +230,7 @@ xmap <leader><tab> <plug>(fzf-maps-x)
 omap <leader><tab> <plug>(fzf-maps-o)
 
 map <Leader>f :Files<CR>
-map <Leader>r :History<CR>
+" map <Leader>r :History<CR>
 map <Leader>l :Lines<CR>
 map <Leader>b :Buffer<CR>
 map <Leader>m :Marks<CR>
@@ -217,6 +238,8 @@ map <Leader>y :BTags<CR>
 map <Leader>Y :Tags<CR>
 map <Leader>; :History:<CR>
 map <Leader>/ :History/<CR>
+
+map <Leader>r :registers<CR>
 
 " autoindent file
 map <Leader>i mzgg=G`z<CR>
@@ -334,14 +357,7 @@ map <Left> :bp<CR>
 " vnoremap <Down> :m '<+2<CR>gv=gv
 " vnoremap <Up> :m '>-1<CR>gv=gv
 
-" disable arrows in insert 'cause I can't prevent the stupid trackpad from
-" sending arrow signals in Ubuntu
-inoremap <Up> <nop>
-inoremap <Down> <nop>
-inoremap <Right> <nop>
-inoremap <Left> <nop>
-
-"deoplete dropdown arrow key support
+" auto-complete arrow keys support
 inoremap <expr><Down>    pumvisible() ?   "\<C-n>"  : "\<Down>"
 inoremap <expr><Up>    pumvisible() ?   "\<C-p>"  : "\<Up>"
 
