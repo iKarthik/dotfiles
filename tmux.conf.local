@@ -48,7 +48,7 @@ set -g status-interval 2
 # set -g status-left-length 120
 # set -g status-justify 'centre'
 
-set -g status-right "#{battery_icon} #{battery_percentage} #[fg=green]#(tmux-mem-cpu-load --interval 1 --graph-lines 0 --averages-count 1 --mem-mode 1) #[fg=white]#(date -u +%%m-%%dT%%H:%%M:%%S) %m-%dT%H:%M:%S%z"
+set -g status-right "#[fg=white]#(date -u +%%Y-%%m-%%dT%%H:%%M:%%S) %Y-%m-%dT%H:%M:%S%z #{battery_icon} #{battery_percentage} #[fg=green]#(tmux-mem-cpu-load --interval 1 --graph-lines 0 --averages-count 1 --mem-mode 1)"
 set -g status-right-length 220
 
 set -g focus-events on
