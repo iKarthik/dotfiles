@@ -16,7 +16,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'kshenoy/vim-signature'
 Plug 'bradurani/vim-powerclose', { 'branch': 'master' }
-Plug 'schickling/vim-bufonly'
 Plug 'chaoren/vim-wordmotion'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'ludovicchabant/vim-gutentags'

@@ -302,8 +302,6 @@ nmap <Leader>d :call RemoveAllDebuggers()<cr>
                           \['\.rs$',            'println!("{:?}", )'],
                           \['\.py$',            'import ipdb; ipdb.set_trace()']]
 
-"vim-buffonly close all but current buffer
-nnoremap <leader>Q :BufOnly<CR>
 nnoremap <leader>o :only<CR>
 
 "vim-power-close

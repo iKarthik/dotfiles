@@ -14,7 +14,7 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 export PATH="$HOME/.bin:$PATH"
 eval "$(rbenv init - --no-rehash)"
 
-export PATH="$PATH:`yarn global bin`"
+# export PATH="$PATH:`yarn global bin`"
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
   synclient VertEdgeScroll=0
