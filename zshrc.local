@@ -2,7 +2,7 @@
 setopt ignoreeof
 #
 #so I can run rcup without any env variables
-export RCRC=$HOME/src/dotfiles/rcrc
+export RCRC=$HOME/dev/dotfiles/rcrc
 
 #colors used for LS
 export LSCOLORS="gxfxcxdxbxegedabagacad"
@@ -12,9 +12,6 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 
 export PATH="$HOME/.bin:$PATH"
-eval "$(rbenv init - --no-rehash)"
-
-# export PATH="$PATH:`yarn global bin`"
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
   synclient VertEdgeScroll=0

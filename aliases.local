@@ -16,11 +16,6 @@ alias ..='cd ..'
 #ruby
 alias be='bundle exec'
 
-#elixir
-alias iexm='iex -S mix'
-alias iexs='iex -S mix phoenix.server'
-alias iext='iex -S mix test'
-alias mixs='mix phoenix.server'
 
 #docker
 alias d='docker'
@@ -29,18 +24,6 @@ alias dcr='docker-compose run'
 alias dcb='docker-compose build'
 alias dcu='docker-compose up'
 alias dc='docker-compose'
-
-#terraform
-alias tf='terraform'
-
-#ag
-alias ag='ag --path-to-ignore=~/.agignore'
-
-#python
-alias py=python3
-
-#psql
-alias psql="PAGER=\"less -iMSx4 -FX\" psql"
 
 #tree
 alias tree='tree -I "$(cat ~/.treeignore)"'
@@ -103,26 +86,6 @@ man() {
     man "$@"
 }
 
-serve() {
-  python2 -m SimpleHTTPServer "$@"
-}
-
-source <(kubectl completion zsh)
-
-alias kc='kubectl'
-alias kcc='kc config'
-alias kcccc='kcc current-context'
-alias kccgc='kcc get-clusters'
-alias kccuc='kcc use-context'
-alias kcd='kc describe'
-alias kcg='kc get'
-alias gc='gcloud'
-
-tmux_unzoom() {
-  if $(tmux list-panes -F '#F' | grep -q Z); then
-    tmux resize-pane -Z
-  fi
-}
 
 fbr() {
   local branches branch
@@ -131,5 +94,4 @@ fbr() {
   git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
 }
 
-# Python
-alias prp="pipenv run python"
+

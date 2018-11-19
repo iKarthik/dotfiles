@@ -1,1 +1,1 @@
-source ~/src/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/dev/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
