@@ -1,4 +1,8 @@
-
+tap 'caskroom/homebrew-cask'
+cask 'java'
+cask 'iterm2'
+cask 'karabiner-elements'
+cask 'hammerspoon'
 brew 'tig'
 brew 'watch'
 brew 'tree'
@@ -10,12 +14,17 @@ brew 'sl'
 brew 'fzf'
 brew 'jq'
 brew 'cowsay'
+brew 'tldr'
 
 brew 'nvm'
 brew 'awscli'
 brew 'gist'
 
+brew 'pidof'
+brew 'thefuck'
+
 brew 'imagemagick'
+
 
 # Programming languages
 # brew 'elm'
