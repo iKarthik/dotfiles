@@ -48,8 +48,7 @@ function mod.init(hyper)
 	                 start = true,
 	               })
 
-		--Clipboard----------------------------------------------------------
-	 Install:andUse("WinWin", {})
+ 	 Install:andUse("WinWin", {})
 
 	 -- hs.hotkey.bind(hyper, "left", halfLeft) --Upper Full
 

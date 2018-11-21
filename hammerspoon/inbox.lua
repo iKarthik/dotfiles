@@ -4,9 +4,9 @@ local fnutils = require "hs.fnutils"
 
 
 function execute()
-	hs.application.launchOrFocus("Google Chrome")
-	result, object, descriptor = hs.osascript.applescriptFromFile("~/.hammerspoon//executeAs.applescript", "AppleScript")
-		    log.i(object)
+	--hs.application.launchOrFocus("Google Chrome")
+	result, object, descriptor = hs.osascript.applescriptFromFile(os.getenv ("HOME") .. "/.hammerspoon/executeAs.applescript")
+	log.i("Hello there")
 	if object == false then
 	    log.i("could not find it")
 		openMail()
@@ -31,20 +31,10 @@ function tabWindows(app)
   return tabWins
 end
 
--- function tabsInChrome()
--- 	app = hs.application.get("Google Chrome")
--- 	hs.tabs.enableForApp(app)
--- 	tabs = hs.tabs.tabWindows(app)
--- 	local numTabs = #tabs
--- 	hs.window:focusTab(2)
-
--- 	log.i(numTabs)
--- end
-
 
 function mod.init(hyper)
 	hs.allowAppleScript(true)
-	hs.hotkey.bind(hyper, 'x', execute)
+	--hs.hotkey.bind(hyper, 'x', execute)
 end
 
 return mod
