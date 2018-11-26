@@ -18,8 +18,9 @@ if [ -r "$HOME/.rcrc" ]; then
   rcup
 fi
 
-cowsay "Don't forget to generate a new ssh key!"
 
+echo "Running osx customizations .."
 
+./osx.sh
 
 echo "customizations complete. You may now begin to use your laptop!!"
