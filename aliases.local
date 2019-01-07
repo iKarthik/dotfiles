@@ -99,3 +99,18 @@ idea(){
   ~/.idea.sh $1
 }
 
+listjava(){
+  /usr/libexec/java_home -V
+}
+
+listcert(){
+  security find-certificate -c "$1" -a -Z /System/Library/Keychains/SystemRootCertificates.keychain | grep "SHA-1 hash:" | awk '{print $3}' 
+}
+
+deletecert(){
+  sudo security delete-certificate -Z $1 /System/Library/Keychains/SystemRootCertificates.keychain
+}
+
+findAndDeleteCert(){
+  security find-certificate -c "$1" -a -Z /System/Library/Keychains/SystemRootCertificates.keychain | grep "SHA-1 hash:" | awk '{print $3}' | xargs -I {} sudo security delete-certificate -Z {} /System/Library/Keychains/SystemRootCertificates.keychain
+}

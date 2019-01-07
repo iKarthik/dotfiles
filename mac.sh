@@ -107,6 +107,9 @@ tap "thoughtbot/formulae"
 tap "homebrew/services"
 tap "universal-ctags/universal-ctags"
 
+#rcm
+brew install rcm
+
 # Unix
 brew "universal-ctags", args: ["HEAD"]
 brew "git"
@@ -121,7 +124,8 @@ brew "zsh"
 
 EOF
 
-fancy_echo " ... ----------------------"
+fancy_echo "Running rcup ----------------------"
+env RCRC="$HOME\dev\dotfiles\rcrc rcup"
 
 
 if [ -f "$HOME/.laptop.local" ]; then
