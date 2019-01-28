@@ -50,3 +50,4 @@ _load_settings "$HOME/.zsh/configs"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 eval $(thefuck --alias)
+export PATH="/usr/local/opt/openssl/bin:$PATH"

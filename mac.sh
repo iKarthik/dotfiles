@@ -1,3 +1,4 @@
+
 #!/bin/sh
 
 # Welcome to the thoughtbot laptop script!
@@ -6,10 +7,17 @@
 
 fancy_echo() {
   local fmt="$1"; shift
-
   # shellcheck disable=SC2059
   printf "\n$fmt\n" "$@"
 }
+
+fancy_echo "Setting homebrew chown permissions"
+sudo chown -R $(whoami) /usr/local/var/homebrew
+
+fancy_echo "Setting /usr/local chown permissions"
+sudo chown -R `whoami` /usr/local
+
+
 
 append_to_zshrc() {
   local text="$1" zshrc

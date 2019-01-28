@@ -8,6 +8,7 @@ local inbox = require 'inbox'
 local appWatchers = require 'appWatchers'
 local windowManagement = require 'windowManagement'
 local switchUser = require 'switchUser'
+local switchWifi = require 'switchWifi'
 
 --[ Defines ]-------------------------------------------------------------
 hyper =  {"cmd","alt","ctrl"}	-- caps lock held down
@@ -25,4 +26,4 @@ inbox.init(hyper)
 appWatchers.init()
 extras.init()
 switchUser.init(hyper, shyper)
-
+switchWifi.init(hyper, shyper)
