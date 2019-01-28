@@ -3,7 +3,7 @@ local log = hs.logger.new('mymodule','debug')
 local fnutils = require "hs.fnutils"
 
 
-function execute()
+function changeUser()
 	result, object, descriptor = hs.osascript.applescriptFromFile(os.getenv ("HOME") .. "/.hammerspoon/switchUser.applescript")
 	log.i("Switched i hope there")
 end
@@ -29,7 +29,7 @@ end
 
 function mod.init(hyper, shyper)
 	hs.allowAppleScript(true)
-	hs.hotkey.bind(hyper, 'x', execute)
+	hs.hotkey.bind(hyper, 'x', changeUser)
 end
 
 return mod
