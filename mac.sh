@@ -132,12 +132,13 @@ brew "zsh"
 
 EOF
 
-fancy_echo "Running rcup ----------------------"
-env RCRC="$HOME\dev\dotfiles\rcrc rcup"
 
+fancy_echo "Running Rcup ... -------------------------"
+. "~/dev/dotfiles/setup_rcup.sh"
 
-if [ -f "$HOME/.laptop.local" ]; then
+if [ -f "~/dev/dotfiles/.laptop.local" ]; then
   fancy_echo "Running your customizations from ~/.laptop.local ..."
   # shellcheck disable=SC1090
-  . "$HOME/.laptop.local"
+  . "~/dev/dotfiles/.laptop.local"
 fi
+fancy_echo "Done  ----------------------"

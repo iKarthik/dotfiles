@@ -110,34 +110,34 @@ fi
 
 fancy_echo "Updating Homebrew formulae ..."
 brew update --force # https://github.com/Homebrew/brew/issues/1151
-brew bundle --file=- <<EOF
-tap "thoughtbot/formulae"
-tap "homebrew/services"
-tap "universal-ctags/universal-ctags"
+# brew bundle --file=- <<EOF
+brew tap "thoughtbot/formulae"
+brew tap "homebrew/services"
+brew tap "universal-ctags/universal-ctags"
 
 # Unix
-brew "universal-ctags", args: ["HEAD"]
-brew "git"
-brew "openssl"
-brew "rcm"
-brew "reattach-to-user-namespace"
-brew "the_silver_searcher"
-brew "tmux"
-brew "vim"
-brew "watchman"
-brew "zsh"
+brew install "universal-ctags"
+brew installm"git"
+brew installm"openssl"
+brew install "rcm"
+brew install "reattach-to-user-namespace"
+brew install "the_silver_searcher"
+brew install "tmux"
+brew install "vim"
+brew install "watchman"
+brew install "zsh"
 
 # Image manipulation
-brew "imagemagick"
+brew install "imagemagick"
 
 # Programming languages and package managers
-brew "libyaml" # should come after openssl
-brew "node"
-brew "rbenv"
-brew "ruby-build"
-brew "yarn"
+brew install "libyaml" # should come after openssl
+brew install "node"
+brew install "rbenv"
+brew install "ruby-build"
+brew install "yarn"
 
-EOF
+# EOF
 
 fancy_echo "Configuring Ruby ..."
 find_latest_ruby() {
